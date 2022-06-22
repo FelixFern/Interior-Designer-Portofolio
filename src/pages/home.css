@@ -1,0 +1,103 @@
+.home-parent {
+    height: 200vh;
+}
+/* Hero */
+.hero {
+    width: 100vw;
+    height: 100vh;
+}
+.hero .bg-image {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.hero .bg-image .darken {
+    z-index: -1;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.hero .bg-image img {
+    z-index: -2;
+    position: absolute;
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.hero-content {
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    vertical-align: center;
+}
+.hero-content h1{
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+.hero-content p {
+    margin-bottom: 40px;
+    font-size: 24px;
+    width: 40%;
+}
+.hero-content .button-parent {
+    column-gap: 50px;
+    display: flex;
+}
+.hero-content .button {
+    cursor: pointer;
+    transition: 1s;
+    align-items: center;
+    display: flex;
+    column-gap: 15px;
+    width: fit-content;
+    height: fit-content;
+    transform: translateX(0px)
+}
+.hero-content .box {
+    transition: 1s;
+    transform: rotate(0deg);
+    border-radius: 0%;
+    border: 2px solid white;
+    height: 12px;
+    width: 12px;
+}
+.hero-content a {
+    text-decoration: none;
+    color: white;
+}
+.hero-content .button:hover .box {
+    transition: 1s; 
+    background-color: white;
+    opacity: 0.8;
+}
+.hero-content .button:hover {
+    transition: 1s;
+    transform: translateX(10px)
+}
+.hero .social-media {
+    transition: 0.8s;
+    position: absolute;
+    bottom: 10%;
+    font-size: 32px;
+    color: white;
+    left: 12.5%;
+    display: flex;
+    column-gap: 20px;
+}
+.hero .social-media .icon {
+    transition: 0.8s;
+    cursor: pointer;
+}
+.hero .social-media:hover .icon {
+    transition: 0.8s;
+    opacity: .5;
+}
+.hero .social-media .icon:hover {
+    transition: 0.8s;
+    opacity: 1;
+}

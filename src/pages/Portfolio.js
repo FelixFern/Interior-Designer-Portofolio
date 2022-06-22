@@ -1,5 +1,5 @@
 import React from 'react'
-import './portofolio.css'
+import './portfolio.css'
 
 function Portofolio() {
     return (

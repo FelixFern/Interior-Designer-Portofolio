@@ -7,17 +7,24 @@ import {
 
 /* Importing Pages */ 
 import Home from './pages/Home';
-import Portofolio from './pages/Portofolio';
-
+import Portfolio from './pages/Portfolio';
+import Navbar from './components/Navbar';
+import { yPosContext } from './context/global-state';
+import { useState } from 'react';
 
 function App() {
+    const [yPos, setYPos] = useState(0)
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home/>}></Route>
-                <Route path="/portofolio" element={<Portofolio/>}></Route>
-            </Routes>    
-        </Router>
+        <yPosContext.Provider value={{ yPos, setYPos }}>
+            <Navbar className="navbar"></Navbar>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home/>}></Route>
+                    <Route path="/portfolio" element={<Portfolio/>}></Route>
+                </Routes>    
+            </Router>
+        </yPosContext.Provider>
+        
     );
 }
 

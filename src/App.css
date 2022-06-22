@@ -1,4 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Source+Sans+Pro:wght@600&display=swap');
+
+:root {
+  --black: #212121
+}
 * {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { 
+  letter-spacing: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+p {
+  font-size: 16px;
+  font-family: 'Fanwood Text', serif;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  width: 2px;
+  background: var(--black);
+}
+.btn-white {
+  transition: 0.5s;
+  cursor: pointer;
+  text-align: center;
+  background-color: white;
+  text-align: center;
+  padding: 1.5% 0%;
+}
+.btn-white a {
+  margin-left: 5px;
+  padding: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+.btn-white:hover {
+  box-sizing: border-box;
+  transition: 0.5s;
+  background-color: black;
+  box-shadow:inset 0px 0px 0px 1px white;
+}
+.btn-white:hover a {
+  color: white;
+}
+.navbar {
+  position: sticky;
 }
