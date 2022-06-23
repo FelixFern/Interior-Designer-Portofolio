@@ -53,6 +53,27 @@ p {
 .btn-white:hover a {
   color: white;
 }
-.navbar {
-  position: sticky;
+.btn-black {
+  transition: 0.5s;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--black);
+  text-align: center;
+  padding: 0.5% 0%;
 }
+.btn-black a {
+  margin-left: 5px;
+  padding: 0 15px;
+  text-decoration: none;
+  color: white;
+}
+.btn-black:hover {
+  box-sizing: border-box;
+  transition: 0.5s;
+  background-color: white;
+  box-shadow:inset 0px 0px 0px 1px var(--black);
+}
+.btn-black:hover a {
+  color: black;
+}
+

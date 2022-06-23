@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { SiHomeassistant } from 'react-icons/si'
 import { yPosContext } from '../context/global-state'
 
-
 import './navbar.css'
 
 function Navbar() {

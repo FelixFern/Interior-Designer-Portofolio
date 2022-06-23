@@ -1,9 +1,12 @@
 import React from 'react'
+import Carousel from '../components/Carousel'
 import './portfolio.css'
 
 function Portofolio() {
     return (
-        <div>Portofolio</div>
+        <div>
+            <Carousel></Carousel>
+        </div>
     )
 }
 

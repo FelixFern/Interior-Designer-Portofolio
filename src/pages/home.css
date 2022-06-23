@@ -1,5 +1,6 @@
 .home-parent {
-    height: 200vh;
+    scroll-behavior: smooth;
+
 }
 /* Hero */
 .hero {
@@ -100,4 +101,62 @@
 .hero .social-media .icon:hover {
     transition: 0.8s;
     opacity: 1;
+}
+
+/* Works Section */
+.works {
+    width: 100vw;
+}
+.works-title {
+    overflow: hidden;
+    height: fit-content;
+    padding: 20px 0;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+.works h3 {
+    color: black;
+}
+.carousel-parent {
+    width: 100vw;
+    height: fit-content;
+    position: relative;
+}
+.see-more {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+    padding: 20px 0;
+    align-items: center;
+}
+/* Contact Section */
+.contact {
+    background-color: var(--black);
+    width: 100vw;
+}
+.vision-content {
+    width: 75vw;
+    height: fit-content;
+    margin: auto;
+}
+.vision-content .vision {
+    padding: 10% 0;
+    color: white;
+    width: 40%;
+}
+.vision-content .vision h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.vision-content .vision p {
+    font-size: 24px;
+    line-height: 32px;
+}
+.contact .contact-img {
+    position: absolute;
+    width: 50vw;
+    right: 0;
+    transform: translateY(-50%);
 }

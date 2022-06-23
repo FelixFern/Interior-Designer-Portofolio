@@ -1,0 +1,10 @@
+.carousel {
+    width: 100vw;
+    height: fit-content;
+}
+.carousel img {
+    aspect-ratio: 16/9;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
