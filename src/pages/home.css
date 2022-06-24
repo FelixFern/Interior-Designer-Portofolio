@@ -120,8 +120,14 @@
 }
 .carousel-parent {
     width: 100vw;
+    overflow-x: auto;
     height: fit-content;
     position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
+}
+.carousel-parent::-webkit-scrollbar {
+    height: 0;
 }
 .see-more {
     display: flex;

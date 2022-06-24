@@ -1,10 +1,28 @@
 .carousel {
-    width: 100vw;
+    transition: 0.5s;
+    width: fit-content;
     height: fit-content;
+    display: flex;
 }
 .carousel img {
     aspect-ratio: 16/9;
-    width: 50%;
+    width: 50vw;
     height: auto;
     object-fit: cover;
+}
+.thumb h1 {
+    transition: 0.8s;
+    position: absolute;
+    color: white;
+    top: 50%;
+}
+.thumb h1:hover{
+    transition: 0.8s;
+    opacity: 0.5;
+}
+.thumb h1:nth-child(1) {
+    left: 2%;
+}
+.thumb h1:nth-child(2) {
+    right: 2%;
 }

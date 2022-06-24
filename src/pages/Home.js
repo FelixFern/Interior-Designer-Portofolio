@@ -11,6 +11,7 @@ function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
     const handleScroll = () => setYPos(window.pageYOffset);
 
+    const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
     useEffect(() => {
         AOS.init();
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -47,7 +48,9 @@ function Home() {
                     <h2 data-aos="fade-down">Our Works</h2>
                 </div>
                 <div className='carousel-parent'>
-                    <Carousel></Carousel>
+                    <Carousel
+                        images={imagesLink}
+                    ></Carousel>
                 </div>
                 <div className='see-more'>
                     <h3 data-aos="fade-right">Want to see more ?</h3>
