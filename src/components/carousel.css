@@ -10,6 +10,14 @@
     height: auto;
     object-fit: cover;
 }
+.carousel .carousel-slide {
+    transition: 0.8s;
+}
+.carousel .carousel-slide:hover {
+    transition: 0.8s;
+    cursor: pointer;
+    filter: brightness(70%);
+}
 .thumb h1 {
     transition: 0.8s;
     position: absolute;

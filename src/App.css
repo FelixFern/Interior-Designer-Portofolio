@@ -8,6 +8,9 @@
   padding: 0;
   overflow-x: hidden;
 }
+html {
+  scroll-behavior: smooth;
+}
 h1, h2, h3, h4 { 
   letter-spacing: 5px;
   font-family: 'Source Sans Pro', sans-serif;

@@ -1,6 +1,5 @@
 .home-parent {
     scroll-behavior: smooth;
-
 }
 /* Hero */
 .hero {
@@ -11,6 +10,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+    filter: brightness(20%);
 }
 .hero .bg-image .darken {
     z-index: -1;

@@ -21,7 +21,7 @@ function Home() {
         <div className='home-parent'>
             <div className='hero'>
                 <div className="bg-image">
-                    <div className="darken"></div>
+                    {/* <div className="darken"></div> */}
                     <img src="./project/hero-banner.jpg"></img>
                 </div>
                 <div className='hero-content'>
