@@ -13,7 +13,6 @@ import { yPosContext } from './context/global-state';
 import { useEffect, useState } from 'react';
 
 function App() {
-    
     const [yPos, setYPos] = useState(0)
 
     useEffect(() => {

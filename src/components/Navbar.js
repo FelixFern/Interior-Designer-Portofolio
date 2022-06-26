@@ -24,7 +24,7 @@ function Navbar() {
                     </a>    
                 </h3>
                 <h3 className='btn-white'>
-                    <a href='/porfolio'>
+                    <a href='/portfolio'>
                         Portfolio
                     </a>    
                 </h3>

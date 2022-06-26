@@ -164,5 +164,6 @@
     position: absolute;
     width: 50vw;
     right: 0;
+    z-index: 2;
     transform: translateY(-50%);
 }

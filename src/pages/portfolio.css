@@ -1,0 +1,114 @@
+.portfolio-parent {
+    margin-top: 60px;
+}
+.portfolio-title {
+    padding: 20px;
+    text-align: center;
+}
+.feature-project-parent {
+    width: 100vw;
+    height: 25vw;
+}
+.feature-project-bg {
+    position: absolute;
+    z-index: -1;
+    filter: brightness(20%);
+    width: 100vw;
+    height: 25vw;
+    object-fit: cover;
+}
+.feature-project-content {
+    width: 75vw;
+    height: 25vw;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+}
+.feature-project-content-img {
+    width: 35vw;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+.feature-project-content .description {
+    font-size: 16px;
+    text-align: end;
+    color: white;
+    width: 35vw;
+}
+.feature-project-content .description p {
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: var(--black);
+    padding: 20px;
+}
+.feature-project-content .description .btn-parent {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.feature-project-content .description .btn {
+    margin-top: 20px;
+    padding: 6px 4px;
+    width: fit-content;
+    height: fit-content;
+}
+.portfolio-gallery {
+    width: 100vw;
+    height: fit-content;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.gallery-tile-parent {
+    aspect-ratio: 16/9;
+    width: 50vw;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+}
+.gallery-tile-parent .tile-image {
+    position: absolute;
+    z-index: -1;
+    transition: 0.5s;
+    width: 50vw;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+.gallery-tile-parent:hover .tile-image{
+    transition: 0.5s;
+    filter: brightness(50%);
+}
+.gallery-tile-parent .tile-detail {
+    transition: 0.5s;
+    opacity: 0;
+    text-align: center;
+    color: white;
+    width: 100%;
+    margin: auto;
+    transition: 0.5s;
+}
+.tile-detail h2 {
+    font-size: 36px;
+}
+.tile-detail p {
+    font-size: 24px;
+}
+.gallery-tile-parent:hover .tile-detail{
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.gallery-tile-parent .tile-detail .btn-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.gallery-tile-parent .tile-detail .btn {
+    margin-top: 20px;
+    padding: 6px 4px;
+    width: fit-content;
+    height: fit-content;
+}

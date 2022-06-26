@@ -79,4 +79,27 @@ p {
 .btn-black:hover a {
   color: black;
 }
+.btn-white-outline {
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow:inset 0px 0px 0px 1px white;
+  text-align: center;
+  text-align: center;
+  padding: 0.5% 0%;
+}
+.btn-white-outline a {
+  margin-left: 5px;
+  padding: 0 15px;
+  text-decoration: none;
+  color: white;
+}
+.btn-white-outline:hover {
+  box-sizing: border-box;
+  transition: 0.5s;
+  background-color: white;
+  box-shadow:inset 0px 0px 0px 1px var(--black);
+}
+.btn-white-outline:hover a {
+  color: black;
+}
 
