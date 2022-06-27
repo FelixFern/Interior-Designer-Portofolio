@@ -167,3 +167,35 @@
     z-index: 2;
     transform: translateY(-50%);
 }
+
+/* Tablet */
+@media only screen and (max-width : 1024px) {
+    .hero-content {
+        text-align: center;
+    }
+    .hero-content p {
+        width: 100%;
+    }
+    .hero .social-media {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .button-parent .button{
+        margin: auto;
+    }
+    .see-more .btn-black {
+        text-align: center;
+    }
+    .vision-content .vision {
+        text-align: center;
+        width: 100%;
+    }
+    .contact .contact-img{
+        display: none;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width : 480px) {
+    
+}

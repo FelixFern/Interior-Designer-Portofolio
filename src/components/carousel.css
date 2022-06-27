@@ -35,3 +35,17 @@
 .thumb h1:nth-child(2) {
     right: 2%;
 }
+
+/* Tablet */
+@media only screen and (max-width : 1024px) {
+    .carousel img {
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width : 480px) {
+    
+}

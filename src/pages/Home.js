@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { FaLinkedin, FaInstagram} from 'react-icons/fa'
-import { yPosContext } from '../context/global-state'
+import { FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { yPosContext, hamburgerContext } from '../context/global-state'
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
@@ -9,6 +9,8 @@ import Carousel from '../components/Carousel';
 
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
+    const { hamburgerToggle, setHamburgerToggle } = useContext(hamburgerContext)
+
     const handleScroll = () => setYPos(window.pageYOffset);
 
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
@@ -21,7 +23,6 @@ function Home() {
         <div className='home-parent'>
             <div className='hero'>
                 <div className="bg-image">
-                    {/* <div className="darken"></div> */}
                     <img src="./project/hero-banner.jpg"></img>
                 </div>
                 <div className='hero-content'>
@@ -30,7 +31,7 @@ function Home() {
                     <div className='button-parent' style={{ transform: `translateX(-${yPos * 1}px)` }}>
                         <div className='button'>
                             <div className='box'></div>
-                            <h3><a href="#">Our Works</a></h3>
+                            <h3><a href="/portfolio">Our Works</a></h3>
                         </div>
                         <div className='button'>
                             <div className='box'></div>

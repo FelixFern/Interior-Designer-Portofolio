@@ -33,6 +33,93 @@
 .navigation .link:hover {
     opacity: 0.8;
 }
-.navigation .btn-white {
+.navigation .link-mobile {
     margin-left: -7.5px;
+}
+.navigation-mobile {
+    margin-right: 12.5vw;
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+}
+.navigation-mobile .link a {
+    color: white;
+    text-decoration: none;
+}
+.navigation-mobile .link:hover {
+    opacity: 0.8;
+}
+.navigation-mobile .link-mobile {
+    margin-left: -7.5px;
+}
+.navigation-mobile {
+    display: none;
+}
+/* Tablet */
+@media only screen and (max-width : 1024px) {
+    .company {
+        flex: 1;
+        width: fit-content;
+    }
+    .hamburger {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 60px;
+        background-color: black;
+    }
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+    .navigation {
+        display: none;
+    }
+    .navigation-mobile {
+        transition: 0.5s;
+        transform: translateY(-200%);
+        position: absolute;
+        z-index: 99;
+        color: black;
+        display: block;
+        margin-top: 60px;
+        width: 100vw;
+        text-align: center;
+    }
+    .show-nav {
+        transition: 0.5s;
+        transform: translateY(0);
+    }
+    .link-mobile {
+        transition: 0.5s;
+        cursor: pointer;
+        text-align: center;
+        background-color: white;
+        text-align: center;
+        padding: 1.5% 0%;
+    }
+    .link-mobile a {
+        margin-left: 5px;
+        padding: 0 15px;
+        text-decoration: none;
+        color: black;
+    }
+    .link-mobile:hover {
+        box-sizing: border-box;
+        transition: 0.5s;
+        background-color: black;
+    }
+    .link-mobile:hover a {
+        color: white;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width : 480px) {
+    
 }
