@@ -38,7 +38,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className='social-media'  style={{ opacity: `${1 - yPos*0.0015}` }}>
+                <div className='social-media' style={{ opacity: `${1 - yPos*0.0015}` }}>
                     <FaInstagram className='icon'><a href='#'></a></FaInstagram>
                     <FaLinkedin className='icon'><a href='#'></a></FaLinkedin>
                 </div>

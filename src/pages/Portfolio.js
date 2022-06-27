@@ -81,6 +81,7 @@ function Portfolio() {
                                 image="./project/carousel/2.jpg"
                                 title="Title"
                                 subtitle="Sub Title"
+                                
                             ></GalleryTile>
                         </div>
                     </div>

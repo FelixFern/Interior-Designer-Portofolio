@@ -19,6 +19,7 @@
     filter: brightness(70%);
 }
 .thumb h1 {
+    cursor: pointer;
     transition: 0.8s;
     position: absolute;
     color: white;
