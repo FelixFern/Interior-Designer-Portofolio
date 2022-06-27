@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react'
-import './portfolio.css'
+import '../styles/portfolio.css'
 import AOS from 'aos';
 import { yPosContext } from '../context/global-state';
 

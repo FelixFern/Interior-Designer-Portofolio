@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { SiHomeassistant } from 'react-icons/si'
 import { hamburgerContext, yPosContext } from '../context/global-state'
 
-import './navbar.css'
+import '../styles/navbar.css'
 
 function Navbar() {
     const { yPos, setYPos } = useContext(yPosContext)

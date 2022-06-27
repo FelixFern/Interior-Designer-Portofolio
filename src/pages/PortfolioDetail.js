@@ -1,6 +1,6 @@
 import React, { useEffect ,useContext, useState } from 'react'
 import { yPosContext } from '../context/global-state';
-import './portfolio_detail.css'
+import '../styles/portfolio_detail.css'
 
 
 function PortfolioDetail({title, subtitle, desc, image_list}) {

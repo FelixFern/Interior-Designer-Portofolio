@@ -4,7 +4,7 @@ import { yPosContext, hamburgerContext } from '../context/global-state'
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
-import './home.css'
+import '../styles/home.css'
 import Carousel from '../components/Carousel';
 
 function Home() {

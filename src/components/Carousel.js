@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
-import './carousel.css'
+import '../styles/carousel.css'
 
 function Carousel(props) {
     const [xOffset, setXOffset] = useState(0)
