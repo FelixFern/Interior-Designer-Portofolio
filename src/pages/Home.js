@@ -9,8 +9,6 @@ import Carousel from '../components/Carousel';
 
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
-    const { hamburgerToggle, setHamburgerToggle } = useContext(hamburgerContext)
-
     const handleScroll = () => setYPos(window.pageYOffset);
 
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]

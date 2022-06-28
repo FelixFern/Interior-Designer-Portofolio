@@ -35,7 +35,7 @@ function Navbar() {
                         </a>    
                     </h3>
                     <h3 className='link'>
-                        <a href='#contact'>
+                        <a href='/#contact'>
                             Contact
                         </a>    
                     </h3>

@@ -47,7 +47,6 @@ export default function App() {
             </Router>
         </hamburgerContext.Provider>
         </yPosContext.Provider>
-        
     );
 }
 
