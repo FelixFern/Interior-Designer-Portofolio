@@ -120,7 +120,7 @@
 }
 .carousel-parent {
     width: 100vw;
-    overflow-x: auto;
+    overflow-x: none;
     height: fit-content;
     position: relative;
     scroll-behavior: smooth;

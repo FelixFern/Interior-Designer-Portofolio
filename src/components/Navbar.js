@@ -24,9 +24,9 @@ function Navbar() {
                 <div className='hamburger' onClick={() => {
                     hamburgerToggle ? setHamburgerToggle(false) : setHamburgerToggle(true) 
                 }}>
-                    <div className='bar'></div>
-                    <div className='bar'></div>
-                    <div className='bar'></div>
+                    <div className={hamburgerToggle ? 'bar bar-1' : "bar"}></div>
+                    <div className={hamburgerToggle ? 'bar bar-2' : "bar"}></div>
+                    <div className={hamburgerToggle ? 'bar bar-3' : "bar"}></div>
                 </div>
                 <div className='navigation' style={{ transform: `translateX(${yPos * 4}px)` }}>
                     <h3 className='link'>

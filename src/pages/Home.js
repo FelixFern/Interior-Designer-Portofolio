@@ -5,12 +5,13 @@ import AOS from 'aos';
 
 import 'aos/dist/aos.css';
 import '../styles/home.css'
+
 import Carousel from '../components/Carousel';
 
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
     const handleScroll = () => setYPos(window.pageYOffset);
-
+    // console.log(files)
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
     useEffect(() => {
         AOS.init();
