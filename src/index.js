@@ -15,12 +15,13 @@ import Navbar from './components/Navbar';
 import PortfolioDetail from './pages/PortfolioDetail';
 import NotFound from './pages/NotFound';
 
-import { yPosContext, hamburgerContext } from './context/global-state';
+import { yPosContext, hamburgerContext, portfolioContext } from './context/global-state';
 import { useEffect, useState } from 'react';
 
 export default function App() {
     const [yPos, setYPos] = useState(0)
     const [hamburgerToggle, setHamburgerToggle] = useState(false)
+    const [portfolioData, setPortfolioData] = useState([])
 
     useEffect(() => {
         document.title = "Interior Design"
@@ -29,6 +30,7 @@ export default function App() {
     return (
         <yPosContext.Provider value={{ yPos, setYPos }}>
         <hamburgerContext.Provider value={{ hamburgerToggle, setHamburgerToggle }}>
+        <portfolioContext.Provider value={{ portfolioData, setPortfolioData }}>
             <Navbar className="navbar"></Navbar>
             <Router>
                 <Routes>
@@ -45,6 +47,7 @@ export default function App() {
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>    
             </Router>
+        </portfolioContext.Provider>
         </hamburgerContext.Provider>
         </yPosContext.Provider>
     );

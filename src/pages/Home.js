@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FaLinkedin, FaInstagram } from 'react-icons/fa'
-import { yPosContext, hamburgerContext } from '../context/global-state'
+import { yPosContext, hamburgerContext, portfolioContext } from '../context/global-state'
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
@@ -10,14 +10,29 @@ import Carousel from '../components/Carousel';
 
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
+    const { portfolioData, setPortfolioData } = useContext(portfolioContext)
     const handleScroll = () => setYPos(window.pageYOffset);
-    // console.log(files)
+
+    fetch("./project/project.json").then(
+        function(res){
+            return res.json()
+    }).then(
+        function(data){
+            setPortfolioData(data)
+    }).catch(
+        function(err){
+            console.log(err, ' error')
+        }
+    )
+    
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
     useEffect(() => {
         AOS.init();
+        console.log(portfolioData)
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     return (
         <div className='home-parent'>
             <div className='hero'>
