@@ -29,11 +29,11 @@ function Navbar() {
                     <div className={hamburgerToggle ? 'bar bar-3' : "bar"}></div>
                 </div>
                 <div className='navigation' style={{ transform: `translateX(${yPos * 4}px)` }}>
-                    <h3 className='link'>
+                    <a className='link'>
                         <a href='/'>
                             Home
                         </a>    
-                    </h3>
+                    </a>
                     <h3 className='link'>
                         <a href='/#contact'>
                             Contact

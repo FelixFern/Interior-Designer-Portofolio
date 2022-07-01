@@ -17,7 +17,6 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
 .portfolio-desc-parent .subtitle {
     margin-left: 12.5vw;
     font-size: 24px;
@@ -60,4 +59,54 @@
 }
 .right .gallery-r {
     margin-top: 15%;
+}
+
+@media only screen and (max-width : 1000px) {
+    .portfolio-detail-parent {
+        display: block;
+    }
+    .portfolio-desc-parent {
+        position: absolute;
+        width: 100vw;
+        top: 5%;
+        transform: translate(0);
+        background-color: white;
+        margin-top: 60px;
+        padding-top: 15px;
+    }
+    .portfolio-desc-parent h2 {
+        color: black;
+        font-size: 14px;
+    }
+    .portfolio-desc-parent .subtitle {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .portfolio-desc {
+        width: 75vw;
+        top: 0;
+    }
+    .portfolio-desc h2 {
+        font-size: 20px;
+        padding: 5px 0px;
+
+    }
+    .portfolio-desc p{
+        font-size: 16px;
+    }
+    .right {
+        display: block;
+        width: fit-content;
+        margin: 0;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .right .gallery {
+        row-gap: 20px;
+    }
+    .gallery-tile {
+        aspect-ratio: 16/9;
+        width: 70vw;
+    }
 }
