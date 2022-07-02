@@ -12,23 +12,11 @@ function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
     const { portfolioData, setPortfolioData } = useContext(portfolioContext)
     const handleScroll = () => setYPos(window.pageYOffset);
-
-    fetch("./project/project.json").then(
-        function(res){
-            return res.json()
-    }).then(
-        function(data){
-            setPortfolioData(data)
-    }).catch(
-        function(err){
-            console.log(err, ' error')
-        }
-    )
     
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
+    
     useEffect(() => {
         AOS.init();
-        console.log(portfolioData)
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);

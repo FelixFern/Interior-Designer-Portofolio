@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import axios from 'axios';
 
 import './styles/App.css'; 
 import {
@@ -21,10 +22,15 @@ import { useEffect, useState } from 'react';
 export default function App() {
     const [yPos, setYPos] = useState(0)
     const [hamburgerToggle, setHamburgerToggle] = useState(false)
-    const [portfolioData, setPortfolioData] = useState([])
+    const [portfolioData, setPortfolioData] = useState({})
 
     useEffect(() => {
         document.title = "Interior Design"
+        axios.get("/api").then((res) => {
+            setPortfolioData(res)
+        }).catch((err) => {
+            console.log(err)
+        }).then(() => {})
     }, [])
 
     return (
@@ -36,14 +42,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
                     <Route path="/portfolio" element={<Portfolio/>}></Route>
-                    <Route path='/portfolio/d' element={
-                        <PortfolioDetail
-                        title="DESIGN TITLE"
-                        subtitle="SUB TITLE"
-                        desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. "
-                        image_list={["../project/portfolios/2022/1/1.jpg", "../project/portfolios/2022/1/2.jpg", "../project/portfolios/2022/1/3.jpg", "../project/portfolios/2022/1/4.jpg", "../project/portfolios/2022/1/1.jpg", "../project/portfolios/2022/1/2.jpg", "../project/portfolios/2022/1/3.jpg", "../project/portfolios/2022/1/4.jpg", "../project/portfolios/2022/1/1.jpg", "../project/portfolios/2022/1/2.jpg", "../project/portfolios/2022/1/3.jpg", "../project/portfolios/2022/1/4.jpg", "../project/portfolios/2022/1/1.jpg", "../project/portfolios/2022/1/2.jpg", "../project/portfolios/2022/1/3.jpg", "../project/portfolios/2022/1/4.jpg"]}
-                        
-                        ></PortfolioDetail>}></Route>
+                    <Route path='/portfolio/:year/:slug' element={<PortfolioDetail></PortfolioDetail>}></Route>
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>    
             </Router>

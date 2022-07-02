@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import '../styles/portfolio.css'
 import AOS from 'aos';
-import { yPosContext } from '../context/global-state';
+import { yPosContext, portfolioContext } from '../context/global-state';
 
 function GalleryTile(props) {
     return (
@@ -12,7 +12,7 @@ function GalleryTile(props) {
                 <p>{props.subtitle}</p>
                 <div className='btn-parent'>
                     <h3 className='btn-white-outline btn'>
-                        <a href='#' >
+                        <a href='#'>
                             MORE DETAIL
                         </a>
                     </h3>
@@ -22,19 +22,18 @@ function GalleryTile(props) {
     )
 }
 
-/*
-Sementara masih belum dibuat looping untuk show semua project yang ada,
-rencananya bakalan dibuat state yang isinya list component GalleryTile, terus dirender pakai loop
-*/
 function Portfolio() {
+    const default_URL = './project/portfolios'
     useEffect(() => {
         AOS.init()
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
     const { yPos, setYPos } = useContext(yPosContext)
-    const handleScroll = () => setYPos(window.pageYOffset);
+    const { portfolioData, setPortfolioData} = useContext(portfolioContext)
 
+    const handleScroll = () => setYPos(window.pageYOffset);
+    
     return (
         <div className='portfolio-parent'>
             <div className='portfolio-title' style={{ transform: `translateY(-${yPos * 0.01}px)` }}>
@@ -57,7 +56,29 @@ function Portfolio() {
                     </div>
                 </div>
                 <div className='portfolio-list'>
-                    <div className='portfolio-section'>
+                    { typeof portfolioData.data === 'undefined' ? 
+                    (
+                        <div>Loading...</div>
+                    ):(
+                        portfolioData.data.Years.map((year, i) => (
+                            <div className='portfolio-section'>
+                                <div className='portfolio-title' data-aos='fade-up'>
+                                    <h2>{year}</h2>
+                                </div>
+                                <div className='portfolio-gallery'>
+                                    {portfolioData.data.result[i].Projects.map((project, index) => (
+                                        <GalleryTile
+                                            image={default_URL + '/' + year + '/' + encodeURI(project.Name) + '/' + encodeURI(project.Pictures[0])}
+                                            title={project.Name}
+                                        ></GalleryTile>
+                                    ))}
+                                </div>
+                            </div>
+                            )
+                        )
+                        ) 
+                    }
+                    {/* <div className='portfolio-section'>
                         <div className='portfolio-title' data-aos='fade-up'>
                             <h2>2022</h2>
                         </div>
@@ -110,7 +131,7 @@ function Portfolio() {
                                 subtitle="Sub Title"
                             ></GalleryTile>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
