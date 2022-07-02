@@ -1,4 +1,4 @@
-import React, { useState ,useContext } from 'react'
+import React, { useState ,useContext, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
 import { yPosContext, portfolioContext } from '../context/global-state';
@@ -19,25 +19,30 @@ function PortfolioDetail() {
     const handleScroll = () => setYPos(window.pageYOffset);
 
     let index = 0
-
+    const default_URL = '.../project/portfolios'
+    
     console.log(year, slug)
-
-    if(typeof portfolioData.data !== "undefined") {
-        portfolioData.data.Years.map((data,i) => {data == year ? index = data : index = 0})
-        portfolioData.data.result[index].Projects.map((data,index) => {
-            console.log(encodeURI(data.Name))
-            if(encodeURI(data.Name) == slug) {
-                // console.log("TESTS")
-                setTitle(data.Name)
-                setDesc(data.Desc)
-                setImageList([...imageList, data.pictures])
-            }
-        })
-    }
+    useEffect(() => {
+        console.log(portfolioData)
+        if(typeof portfolioData.data !== "undefined") {
+            portfolioData.data.Years.map((data,i) => {data == year ? index = i : index = 0})
+            console.log(index)
+            portfolioData.data.result[index].Projects.map((data,j) => {
+                if(data.Name == slug) {
+                    // console.log("TESTS")
+                    setTitle(data.Name)
+                    setDesc(data.Desc)
+                    setImageList(data.Pictures)
+                    
+                }
+            })
+        }
+    }, [portfolioData])
+    
     
     let gallery_tile_l = []
     let gallery_tile_r = []
-
+    console.log(imageList)
     // image_list.map(image => {
     //     if(image_list.indexOf(image) % 2 != 0) {gallery_tile_l.push(<img className='gallery-tile' src={image}></img>)}
     //     else if(image_list.indexOf(image) % 2 == 0) {gallery_tile_r.push(<img className='gallery-tile' src={image}></img>)}
@@ -51,7 +56,7 @@ function PortfolioDetail() {
         <div className='portfolio-detail-parent'>
             <div className='left'>
                 <div className='portfolio-detail-bg'>
-                    <img src={imageList[0]}></img>
+                    <img src='..../project/portfolios'></img>
                 </div>
                 <div className='portfolio-desc-parent'>
                     <h2 className='subtitle'>{subtitle}</h2>

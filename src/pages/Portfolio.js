@@ -12,7 +12,7 @@ function GalleryTile(props) {
                 <p>{props.subtitle}</p>
                 <div className='btn-parent'>
                     <h3 className='btn-white-outline btn'>
-                        <a href='#'>
+                        <a href={"/portfolio/" + props.year + '/' + props.title}>
                             MORE DETAIL
                         </a>
                     </h3>
@@ -70,6 +70,7 @@ function Portfolio() {
                                         <GalleryTile
                                             image={default_URL + '/' + year + '/' + encodeURI(project.Name) + '/' + encodeURI(project.Pictures[0])}
                                             title={project.Name}
+                                            year={year}
                                         ></GalleryTile>
                                     ))}
                                 </div>

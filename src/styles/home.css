@@ -138,7 +138,7 @@
     align-items: center;
 }
 /* Contact Section */
-.contact {
+.vision-parent {
     background-color: var(--black);
     width: 100vw;
 }
@@ -160,14 +160,73 @@
     font-size: 24px;
     line-height: 32px;
 }
-.contact .contact-img {
+.vision-parent .vision-img {
     position: absolute;
     width: 50vw;
     right: 0;
     z-index: 2;
     transform: translateY(-50%);
 }
-
+.contact-parent {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+}
+.contact-parent .contact-content {
+    width: 75vw;
+    padding: 5% 0;
+    margin: auto;
+}
+.contact-parent .left-side {
+    margin-left: 12.5vw;
+    
+}
+.contact-parent .right-side {
+    background-color: var(--black);
+    color: white;
+    height: 30vw;
+}
+.contact-parent .right-side h2:first-child {
+    margin-top: 35%;
+}
+.contact-parent .right-side p, .right-side h2  {
+    margin-left: 10%;
+}
+.contact-parent .contact-content h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.contact-parent .right-side h2 {
+    margin-bottom: 10px;
+}
+.contact-parent .contact-content p {
+    width: 20vw;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.contact-form {
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 40px;
+}
+.contact-form input {
+    height: 43px;
+    padding-left: 20px;
+}
+.contact-form input::-webkit-outer-spin-button,
+.contact-form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.contact-form .message {
+    height: 86px;
+}
+.contact-content .btn-black {
+    margin-top: 20px;
+    width: 25vw;
+}
 /* Tablet */
 @media only screen and (max-width : 1024px) {
     .hero-content {
@@ -190,7 +249,41 @@
         text-align: center;
         width: 100%;
     }
-    .contact .contact-img{
+    .vision-parent .vision-img{
         display: none;
+    }
+    .contact-parent {
+        display: block;
+        height: fit-content;
+    }
+    .contact-parent .contact-content {
+        width: 100vw;
+    }
+    .contact-parent .left-side {
+        height: 75vw;
+        text-align: center;
+        height: fit-content;
+    }
+    .contact-parent .contact-content p {
+        width: 75vw;
+    }
+    .contact-form {
+        width: 75vw;
+    }
+    .contact-content .btn-black {
+        margin-top: 20px;
+        width: 75vw;
+        padding: 1.5% 0;
+    }
+    .contact-parent .right-side {
+        height: 100vw;
+        text-align: center;
+        height: fit-content;
+    }
+    .contact-parent .right-side > *{
+        margin-left: 0;
+    }
+    .contact-parent .right-side h2:first-child {
+        margin-top: 5%;
     }
 }
