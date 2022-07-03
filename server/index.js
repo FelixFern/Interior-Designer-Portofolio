@@ -7,8 +7,13 @@ const port = 3001
 
 app.get("/api", (req, res) => {
     // res.send("Hello world")
-    res.json(GPD.GPD(path.resolve(__dirname,"..")+"/public/project/portfolios"))
+    res.json(GPD.GPD());
 })
+
+app.get("/carousel", (req,res) => {
+    res.json(GPD.getCarousel());
+})
+
 app.listen(3001, () => {
     console.log("Server is listening on port " + 3001)
 })

@@ -22,7 +22,7 @@ function PortfolioDetail() {
 
     useEffect(() => {
         if(typeof portfolioData.data !== "undefined") {
-            portfolioData.data.result[portfolioData.data.Years.indexOf(year)].Projects.map((data,j) => {
+            portfolioData.data.result[portfolioData.data.Years.indexOf(year)].Projects.map((data) => {
                 if(data.Name == slug) {
                     setTitle(data.Name)
                     setDesc(data.Desc)
