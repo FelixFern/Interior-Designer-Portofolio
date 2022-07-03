@@ -16,18 +16,25 @@ import Navbar from './components/Navbar';
 import PortfolioDetail from './pages/PortfolioDetail';
 import NotFound from './pages/NotFound';
 
-import { yPosContext, hamburgerContext, portfolioContext } from './context/global-state';
+import { yPosContext, hamburgerContext, portfolioContext, carouselContext } from './context/global-state';
 import { useEffect, useState } from 'react';
 
 export default function App() {
     const [yPos, setYPos] = useState(0)
     const [hamburgerToggle, setHamburgerToggle] = useState(false)
     const [portfolioData, setPortfolioData] = useState({})
+    const [carouselData, setCarouselData] = useState({})
 
     useEffect(() => {
         document.title = "Interior Design"
         axios.get("/api").then((res) => {
             setPortfolioData(res)
+        }).catch((err) => {
+            console.log(err)
+        }).then(() => {})
+
+        axios.get("/carousel").then((res) => {
+            setCarouselData(res)
         }).catch((err) => {
             console.log(err)
         }).then(() => {})
@@ -37,6 +44,7 @@ export default function App() {
         <yPosContext.Provider value={{ yPos, setYPos }}>
         <hamburgerContext.Provider value={{ hamburgerToggle, setHamburgerToggle }}>
         <portfolioContext.Provider value={{ portfolioData, setPortfolioData }}>
+        <carouselContext.Provider value={{ carouselData, setCarouselData }}>
             <Navbar className="navbar"></Navbar>
             <Router>
                 <Routes>
@@ -46,6 +54,7 @@ export default function App() {
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>    
             </Router>
+        </carouselContext.Provider>
         </portfolioContext.Provider>
         </hamburgerContext.Provider>
         </yPosContext.Provider>

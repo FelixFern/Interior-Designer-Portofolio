@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { FaLinkedin, FaInstagram } from 'react-icons/fa'
-import { yPosContext, hamburgerContext, portfolioContext } from '../context/global-state'
+import { yPosContext, hamburgerContext, portfolioContext, carouselContext } from '../context/global-state'
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';
@@ -11,6 +11,7 @@ import Carousel from '../components/Carousel';
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
     const { portfolioData, setPortfolioData } = useContext(portfolioContext)
+    const { carouselData, setCarouselData } = useContext(carouselContext)
     const handleScroll = () => setYPos(window.pageYOffset);
     
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
@@ -33,7 +34,7 @@ function Home() {
                     <div className='button-parent' style={{ transform: `translateX(-${yPos * 1}px)` }}>
                         <div className='button'>
                             <div className='box'></div>
-                            <h3><a href="/portfolio">Our Works</a></h3>
+                            <h3><a href="/portofolio">Our Works</a></h3>
                         </div>
                         <div className='button'>
                             <div className='box'></div>
@@ -51,9 +52,7 @@ function Home() {
                     <h2 data-aos="fade-down">Our Works</h2>
                 </div>
                 <div className='carousel-parent'>
-                    <Carousel
-                        images={imagesLink}
-                    ></Carousel>
+                    <Carousel></Carousel>
                 </div>
                 <div className='see-more'>
                     <h3 data-aos="fade-right">Want to see more ?</h3>

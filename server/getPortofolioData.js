@@ -72,7 +72,7 @@ module.exports = {
         
         // Get ALl List of Carousel Pictures
         fs.readdirSync(crawlingPath).forEach(function(picture){
-            returnVal.result.push(crawlingPath+'/'+picture)
+            returnVal.result.push(picture)
         })
 
         return returnVal;

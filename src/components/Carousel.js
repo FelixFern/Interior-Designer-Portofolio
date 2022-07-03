@@ -1,16 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
+import { carouselContext } from '../context/global-state'
 import '../styles/carousel.css'
 
 function Carousel(props) {
-    const [xOffset, setXOffset] = useState(0)
-    const imageList = props.images
+    const [ xOffset, setXOffset ] = useState(0)
+    const { carouselData, setCarouselData }  = useContext(carouselContext)
+    const [ imageList, setImageList ] = useState([])
     
     let slides = []
+    const default_URL = './project/carousel/'
     
+    useEffect(() => {
+        if(typeof carouselData.data !== 'undefined') {
+            setImageList(carouselData.data.result)
+        }
+    }, [carouselData])
+
     imageList.map(image => {
         slides.push(
-            <img key={imageList.indexOf(image)} className="carousel-slide" src={image}></img>
+            <img key={imageList.indexOf(image)} className="carousel-slide" src={default_URL + image}></img>
         )
     })
 
