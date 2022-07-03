@@ -16,6 +16,7 @@ function Home() {
     
     const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
     
+    document.title = "Home: Interior Design Portfolio"
     useEffect(() => {
         AOS.init();
         window.addEventListener('scroll', handleScroll, { passive: true });

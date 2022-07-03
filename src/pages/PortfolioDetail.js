@@ -20,7 +20,34 @@ function PortfolioDetail() {
 
     const default_URL = 'http://localhost:3000/project/portfolios'
 
+    // Check if portofolio exists
+    if(typeof portfolioData.data !== "undefined") {
+        var found = false
+        portfolioData.data.Years.map((data) => {
+            if(data == year){
+                found = true
+            }
+        })
+
+        if(!found){
+            alert("Portfolio tidak ada")
+            window.location = '/';
+        } else{
+            found = false;
+            portfolioData.data.result[portfolioData.data.Years.indexOf(year)].Projects.map((data) => {
+                if(data.Name == slug){
+                    found = true;
+                }
+            })
+            if(!found){
+                alert("Portfolio tidak ada")
+                window.location = '/';
+            }
+        }
+    }
+
     useEffect(() => {
+        document.title = slug;
         if(typeof portfolioData.data !== "undefined") {
             portfolioData.data.result[portfolioData.data.Years.indexOf(year)].Projects.map((data) => {
                 if(data.Name == slug) {
@@ -43,6 +70,7 @@ function PortfolioDetail() {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+    
 
     return (
         <div className='portfolio-detail-parent'>

@@ -26,6 +26,7 @@ function Portfolio() {
     const default_URL = './project/portfolios'
     const { yPos, setYPos } = useContext(yPosContext)
     const { portfolioData, setPortfolioData} = useContext(portfolioContext)
+    document.title = "Portfolio"
     useEffect(() => {
         AOS.init()
         window.addEventListener('scroll', handleScroll, { passive: true });
