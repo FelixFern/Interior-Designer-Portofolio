@@ -33,7 +33,7 @@ function Home() {
                     <div className='button-parent' style={{ transform: `translateX(-${yPos * 1}px)` }}>
                         <div className='button'>
                             <div className='box'></div>
-                            <h3><a href="/portofolio">Our Works</a></h3>
+                            <h3><a href="/portfolio">Our Works</a></h3>
                         </div>
                         <div className='button'>
                             <div className='box'></div>
@@ -90,7 +90,7 @@ function Home() {
                         </a>
                     </h3>
                 </div>
-                <div className='contact-content right-side'  data-aos="fade-right">
+                <div className='contact-content right-side'  data-aos="fade-left">
                     <h2>Phone Number</h2>
                     <p>+62-xxx-xxxx-xxxx</p>
                     <h2>Email</h2>

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import '../styles/portfolio.css'
 import AOS from 'aos';
 import { yPosContext, portfolioContext } from '../context/global-state';
@@ -24,14 +24,14 @@ function GalleryTile(props) {
 
 function Portfolio() {
     const default_URL = './project/portfolios'
+    const { yPos, setYPos } = useContext(yPosContext)
+    const { portfolioData, setPortfolioData} = useContext(portfolioContext)
     useEffect(() => {
         AOS.init()
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, [])
-    const { yPos, setYPos } = useContext(yPosContext)
-    const { portfolioData, setPortfolioData} = useContext(portfolioContext)
-
+    
     const handleScroll = () => setYPos(window.pageYOffset);
     
     return (
@@ -40,21 +40,34 @@ function Portfolio() {
                 <h2>PORTOFOLIO</h2>
             </div>
             <div className='featured-project-parent'>
-                <img className='feature-project-bg' src='./project/carousel/1.jpg'></img>
-                <div className='feature-project-content'>
-                    <img className='feature-project-content-img' src='./project/carousel/1.jpg' style={{ transform: `translateX(-${yPos * 0.1}px)` }}></img>
-                    <div className='description'>
-                        <h2 style={{ transform: `translateX(${yPos * 0.1}px)` }}>PROJECT TITLE</h2>
-                        <p style={{ transform: `translateX(${yPos * 0.2}px)` }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. </p>
-                        <div className='btn-parent'  style={{ transform: `translateX(${yPos * 0.15}px)` }}>
-                            <h3 className='btn-white-outline btn'>
-                                <a href='/portofolio' >
-                                    MORE DETAIL
-                                </a>
-                            </h3>
+            { typeof portfolioData.data === 'undefined' ? (
+                <div>Loading...</div>   
+            ) : (
+                <img className='feature-project-bg' 
+                    src={default_URL + '/' + portfolioData.data.Years[0] + '/' + encodeURI(portfolioData.data.result[0].Projects[0].Name) + '/' + encodeURI(portfolioData.data.result[0].Projects[0].Pictures[0])}>
+                </img>
+            )
+            }
+                { typeof portfolioData.data === 'undefined' ? (
+                    <div>Loading...</div>   
+                ) : (
+                    <div className='feature-project-content'>
+                        <img className='feature-project-content-img' 
+                            src={default_URL + '/' + portfolioData.data.Years[0] + '/' + encodeURI(portfolioData.data.result[0].Projects[0].Name) + '/' + encodeURI(portfolioData.data.result[0].Projects[0].Pictures[0])}
+                            style={{ transform: `translateX(-${yPos * 0.1}px)` }}></img>
+                        <div className='description'>
+                            <h2 style={{ transform: `translateX(${yPos * 0.1}px)` }}>{portfolioData.data.result[0].Projects[0].Name}</h2>
+                            <p style={{ transform: `translateX(${yPos * 0.2}px)` }}>{portfolioData.data.result[0].Projects[0].Desc}</p>
+                            <div className='btn-parent'  style={{ transform: `translateX(${yPos * 0.15}px)` }}>
+                                <h3 className='btn-white-outline btn'>
+                                    <a href={"/portofolio/" + portfolioData.data.Years[0] + '/' + portfolioData.data.result[0].Projects[0].Name}>
+                                        MORE DETAIL
+                                    </a>
+                                </h3>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )} 
                 <div className='portfolio-list'>
                     { typeof portfolioData.data === 'undefined' ? 
                     (
