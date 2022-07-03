@@ -19,21 +19,17 @@ function PortfolioDetail() {
     const handleScroll = () => setYPos(window.pageYOffset);
 
     let index = 0
-    const default_URL = '.../project/portfolios'
-    
-    console.log(year, slug)
+    const default_URL = 'http://localhost:3000/project/portfolios'
+
     useEffect(() => {
-        console.log(portfolioData)
         if(typeof portfolioData.data !== "undefined") {
             portfolioData.data.Years.map((data,i) => {data == year ? index = i : index = 0})
-            console.log(index)
             portfolioData.data.result[index].Projects.map((data,j) => {
                 if(data.Name == slug) {
                     // console.log("TESTS")
                     setTitle(data.Name)
                     setDesc(data.Desc)
                     setImageList(data.Pictures)
-                    
                 }
             })
         }
@@ -43,20 +39,20 @@ function PortfolioDetail() {
     let gallery_tile_l = []
     let gallery_tile_r = []
     console.log(imageList)
-    // image_list.map(image => {
-    //     if(image_list.indexOf(image) % 2 != 0) {gallery_tile_l.push(<img className='gallery-tile' src={image}></img>)}
-    //     else if(image_list.indexOf(image) % 2 == 0) {gallery_tile_r.push(<img className='gallery-tile' src={image}></img>)}
-    // })
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll, { passive: true });
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
+    imageList.map(image => {
+        if(imageList.indexOf(image) % 2 != 0) {gallery_tile_l.push(<img className='gallery-tile' src={default_URL + '/' + year + '/' + slug + '/' + image}></img>)}
+        else if(imageList.indexOf(image) % 2 == 0) {gallery_tile_r.push(<img className='gallery-tile' src={default_URL + '/' + year + '/' + slug + '/' + image}></img>)}
+    })
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <div className='portfolio-detail-parent'>
             <div className='left'>
                 <div className='portfolio-detail-bg'>
-                    <img src='..../project/portfolios'></img>
+                    <img src='http://localhost:3000/project/portfolios/2021/Sky-BSD/1.jpeg'></img>
                 </div>
                 <div className='portfolio-desc-parent'>
                     <h2 className='subtitle'>{subtitle}</h2>

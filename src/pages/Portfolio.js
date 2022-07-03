@@ -12,7 +12,7 @@ function GalleryTile(props) {
                 <p>{props.subtitle}</p>
                 <div className='btn-parent'>
                     <h3 className='btn-white-outline btn'>
-                        <a href={"/portfolio/" + props.year + '/' + props.title}>
+                        <a href={"/portofolio/" + props.year + '/' + props.title}>
                             MORE DETAIL
                         </a>
                     </h3>
@@ -48,7 +48,7 @@ function Portfolio() {
                         <p style={{ transform: `translateX(${yPos * 0.2}px)` }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. </p>
                         <div className='btn-parent'  style={{ transform: `translateX(${yPos * 0.15}px)` }}>
                             <h3 className='btn-white-outline btn'>
-                                <a href='/portfolio' >
+                                <a href='/portofolio' >
                                     MORE DETAIL
                                 </a>
                             </h3>

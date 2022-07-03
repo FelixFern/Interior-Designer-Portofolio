@@ -6,7 +6,6 @@ const GPD = require('./getPortofolioData')
 
 const port = 3001
 
-
 app.get("/api", (req, res) => {
     // res.send("Hello world")
     res.json(GPD.GPD(path.resolve(__dirname,"..")+"/public/project/portfolios"))

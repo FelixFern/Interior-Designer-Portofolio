@@ -41,8 +41,8 @@ export default function App() {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>
-                    <Route path="/portfolio" element={<Portfolio/>}></Route>
-                    <Route path='/portfolio/:year/:slug' element={<PortfolioDetail></PortfolioDetail>}></Route>
+                    <Route path="/portofolio" element={<Portfolio/>}></Route>
+                    <Route path='/portofolio/:year/:slug' element={<PortfolioDetail></PortfolioDetail>}></Route>
                     <Route path="*" element={<NotFound/>}></Route>
                 </Routes>    
             </Router>

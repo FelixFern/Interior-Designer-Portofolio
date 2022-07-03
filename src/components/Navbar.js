@@ -40,7 +40,7 @@ function Navbar() {
                         </a>    
                     </h3>
                     <h3 className='btn-white'>
-                        <a href='/portfolio'>
+                        <a href='/portofolio'>
                             Portfolio
                         </a>    
                     </h3>
@@ -58,7 +58,7 @@ function Navbar() {
                     </a>    
                 </h3>
                 <h3 className='link-mobile'>
-                    <a href='/portfolio'>
+                    <a href='/portofolio'>
                         Portfolio
                     </a>    
                 </h3>

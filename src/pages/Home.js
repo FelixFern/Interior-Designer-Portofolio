@@ -33,7 +33,7 @@ function Home() {
                     <div className='button-parent' style={{ transform: `translateX(-${yPos * 1}px)` }}>
                         <div className='button'>
                             <div className='box'></div>
-                            <h3><a href="/portfolio">Our Works</a></h3>
+                            <h3><a href="/portofolio">Our Works</a></h3>
                         </div>
                         <div className='button'>
                             <div className='box'></div>
