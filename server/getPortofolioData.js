@@ -16,7 +16,6 @@ module.exports = {
         fs.readdirSync(dir).forEach(function(year) {
 
             returnVal.Years.push(year)
-            returnVal.Years = returnVal.Years.reverse()
             yearProjects = {
                 Year: year,
                 Projects: []
@@ -49,9 +48,10 @@ module.exports = {
 
             // Push every project of the year
             returnVal.result.push(yearProjects);
-            returnVal.result = returnVal.result.reverse()
+            
         });
-
+        returnVal.Years = returnVal.Years.reverse()
+        returnVal.result = returnVal.result.reverse()
         return returnVal;
     }
 };

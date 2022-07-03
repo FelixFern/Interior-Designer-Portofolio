@@ -18,15 +18,12 @@ function PortfolioDetail() {
 
     const handleScroll = () => setYPos(window.pageYOffset);
 
-    let index = 0
     const default_URL = 'http://localhost:3000/project/portfolios'
 
     useEffect(() => {
         if(typeof portfolioData.data !== "undefined") {
-            portfolioData.data.Years.map((data,i) => {data == year ? index = i : index = 0})
-            portfolioData.data.result[index].Projects.map((data,j) => {
+            portfolioData.data.result[portfolioData.data.Years.indexOf(year)].Projects.map((data,j) => {
                 if(data.Name == slug) {
-                    // console.log("TESTS")
                     setTitle(data.Name)
                     setDesc(data.Desc)
                     setImageList(data.Pictures)
@@ -38,7 +35,6 @@ function PortfolioDetail() {
     
     let gallery_tile_l = []
     let gallery_tile_r = []
-    console.log(imageList)
     imageList.map(image => {
         if(imageList.indexOf(image) % 2 != 0) {gallery_tile_l.push(<img className='gallery-tile' src={default_URL + '/' + year + '/' + slug + '/' + image}></img>)}
         else if(imageList.indexOf(image) % 2 == 0) {gallery_tile_r.push(<img className='gallery-tile' src={default_URL + '/' + year + '/' + slug + '/' + image}></img>)}
@@ -52,7 +48,7 @@ function PortfolioDetail() {
         <div className='portfolio-detail-parent'>
             <div className='left'>
                 <div className='portfolio-detail-bg'>
-                    <img src='http://localhost:3000/project/portfolios/2021/Sky-BSD/1.jpeg'></img>
+                    <img src={default_URL + '/' + year + '/' + slug + '/' + imageList[0]}></img>
                 </div>
                 <div className='portfolio-desc-parent'>
                     <h2 className='subtitle'>{subtitle}</h2>
