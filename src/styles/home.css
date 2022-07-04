@@ -1,5 +1,6 @@
 .home-parent {
     scroll-behavior: smooth;
+    transition: 0.5s;
 }
 /* Hero */
 .hero {

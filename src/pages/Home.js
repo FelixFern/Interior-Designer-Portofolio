@@ -7,11 +7,13 @@ import 'aos/dist/aos.css';
 import '../styles/home.css'
 
 import Carousel from '../components/Carousel';
+import Loading from './Loading';
 
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
     const { portfolioData, setPortfolioData } = useContext(portfolioContext)
     const { carouselData, setCarouselData } = useContext(carouselContext)
+    const [ isLoading, setLoading ] = useState(true)
     const handleScroll = () => setYPos(window.pageYOffset);
     
     useEffect(() => {
@@ -20,6 +22,16 @@ function Home() {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        if(typeof portfolioData !== 'undefined') {
+            setLoading(false)
+        } else {
+            setLoading(true)
+        }
+    }, [portfolioData])
+
+    if(isLoading) return <Loading></Loading>
 
     return (
         <div className='home-parent'>

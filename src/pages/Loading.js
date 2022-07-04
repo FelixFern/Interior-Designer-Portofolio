@@ -1,8 +1,13 @@
 import React from 'react'
+import '../styles/loading.css'
 
 function Loading() {
     return (
-        <div>Loading</div>
+        <div className='loading-parent'>
+            <div className='loading-content'>
+                <img src='./loading.svg'></img>
+            </div>
+        </div>
     )
 }
 
