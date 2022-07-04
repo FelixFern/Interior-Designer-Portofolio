@@ -14,10 +14,8 @@ function Home() {
     const { carouselData, setCarouselData } = useContext(carouselContext)
     const handleScroll = () => setYPos(window.pageYOffset);
     
-    const imagesLink = ["./project/carousel/1.jpg", "./project/carousel/2.jpg", "./project/carousel/3.jpg", "./project/carousel/4.jpg"]
-    
-    document.title = "Home: Interior Design Portfolio"
     useEffect(() => {
+        document.title = "Home - Interior Design Portofolio"
         AOS.init();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
@@ -71,7 +69,7 @@ function Home() {
                         <p style={{ transform: `translateX(${yPos * 0.05 - 50}px)` }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor mauris et gravida accumsan. Mauris id ex nec diam tincidunt cursus. Curabitur pharetra tristique tortor ut semper. Pellentesque arcu risus, ornare id lorem et, faucibus dictum mauris. </p>
                     </div>
                 </div>
-                <img className='vision-img' src='./project/carousel/1.jpg'></img>
+                <img className='vision-img' src='./project/hero-banner.jpg'></img>
             </div>
             <div className='contact-parent' id='contact'>
                 <div className='contact-content left-side'>

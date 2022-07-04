@@ -59,20 +59,29 @@ module.exports = {
         return returnVal;
     },
 
-    getCarousel: function (){
+    getCarousel: function () {
         // Importing fs and path
         var path = require('path')
         var fs = require('fs');
 
-        const crawlingPath = path.resolve(__dirname,"..")+"/public/project/carousel";
+        const crawlingPathImg = path.resolve(__dirname,"..")+"/public/project/carousel/images";
+        const crawlingPathLinks = path.resolve(__dirname,"..")+"/public/project/carousel/links";
+        const dir = path.resolve(__dirname,"..")+"/public/project/carousel";
+
         var returnVal = {
-            result: []
+            result: [],
+            links: []
         }
 
         
         // Get ALl List of Carousel Pictures
-        fs.readdirSync(crawlingPath).forEach(function(picture){
+        fs.readdirSync(crawlingPathImg).forEach(function(picture){
             returnVal.result.push(picture)
+        })
+        // Get ALl List of Carousel Links
+        fs.readdirSync(crawlingPathLinks).forEach(function(link){
+            description = fs.readFileSync(dir+'/links/'+link, 'utf-8');
+            returnVal.links.push(description)
         })
 
         return returnVal;

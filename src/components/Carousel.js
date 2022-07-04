@@ -3,23 +3,27 @@ import {AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
 import { carouselContext } from '../context/global-state'
 import '../styles/carousel.css'
 
-function Carousel(props) {
+function Carousel() {
     const [ xOffset, setXOffset ] = useState(0)
     const { carouselData, setCarouselData }  = useContext(carouselContext)
     const [ imageList, setImageList ] = useState([])
+    const [ links, setLinks ] = useState([])
     
     let slides = []
-    const default_URL = './project/carousel/'
+    const default_URL = './project/carousel/images/'
     
     useEffect(() => {
         if(typeof carouselData.data !== 'undefined') {
             setImageList(carouselData.data.result)
+            setLinks(carouselData.data.links)
         }
     }, [carouselData])
 
-    imageList.map(image => {
+    imageList.map((image,i) => {
         slides.push(
-            <img key={imageList.indexOf(image)} className="carousel-slide" src={default_URL + image}></img>
+            <a href={links[i]}>
+                <img key={imageList.indexOf(image)} className="carousel-slide" src={default_URL + image}></img>
+            </a>
         )
     })
 

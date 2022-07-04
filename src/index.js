@@ -26,7 +26,6 @@ export default function App() {
     const [carouselData, setCarouselData] = useState({})
 
     useEffect(() => {
-        document.title = "Interior Design"
         axios.get("/api").then((res) => {
             setPortfolioData(res)
         }).catch((err) => {
