@@ -1,7 +1,10 @@
 import React, { useEffect, useContext, useState } from 'react'
-import '../styles/portfolio.css'
 import AOS from 'aos';
 import { yPosContext, portfolioContext } from '../context/global-state';
+
+import '../styles/portfolio.css'
+
+import Loading from './Loading';
 
 function GalleryTile(props) {
     return (
@@ -25,8 +28,8 @@ function GalleryTile(props) {
 function Portfolio() {
     const default_URL = './project/portfolios'
     const { yPos, setYPos } = useContext(yPosContext)
-    const { portfolioData, setPortfolioData} = useContext(portfolioContext)
-    
+    const { portfolioData, setPortfolioData } = useContext(portfolioContext)
+    const [ isLoading, setLoading ] = useState(true)
 
     useEffect(() => {
         document.title = "Portfolio - Interior Design Portofolio"
@@ -37,7 +40,17 @@ function Portfolio() {
     
 
     const handleScroll = () => setYPos(window.pageYOffset);
-    
+
+    useEffect(() => {
+        if(typeof portfolioData.data !== 'undefined') {
+            setLoading(false)
+        } else {
+            setLoading(true)
+        }
+    }, [portfolioData])
+
+    if(isLoading) return <Loading></Loading>
+
     return (
         <div className='portfolio-parent'>
             <div className='portfolio-title' style={{ transform: `translateY(-${yPos * 0.01}px)` }}>

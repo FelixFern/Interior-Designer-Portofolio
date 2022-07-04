@@ -2,8 +2,10 @@ import React, { useState ,useContext, useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom";
 import { yPosContext, portfolioContext } from '../context/global-state';
+
 import '../styles/portfolio_detail.css'
 
+import Loading from './Loading';
 
 function PortfolioDetail() {
     let { year, slug } = useParams()
@@ -15,6 +17,7 @@ function PortfolioDetail() {
     const [ subtitle, setSubtitle ] = useState("")
     const [ desc, setDesc ] = useState("")
     const [ imageList, setImageList ] = useState([])
+    const [ isLoading, setLoading ] = useState(true)
 
     const handleScroll = () => setYPos(window.pageYOffset);
 
@@ -49,6 +52,7 @@ function PortfolioDetail() {
     useEffect(() => {
         document.title = slug;
         if(typeof portfolioData.data !== "undefined") {
+            setLoading(false)
             portfolioData.data.result[portfolioData.data.Years.indexOf(year)].Projects.map((data) => {
                 if(data.Name == slug) {
                     setTitle(data.Name)
@@ -56,6 +60,8 @@ function PortfolioDetail() {
                     setImageList(data.Pictures)
                 }
             })
+        } else {
+            setLoading(true)
         }
     }, [portfolioData])
     
@@ -71,6 +77,7 @@ function PortfolioDetail() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
     
+    if(isLoading) return <Loading></Loading>
 
     return (
         <div className='portfolio-detail-parent'>
