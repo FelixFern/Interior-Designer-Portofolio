@@ -94,8 +94,8 @@ function Home() {
                         <input data-aos="fade-right" type='number' placeholder='PHONE NUMBER'></input>
                         <input data-aos="fade-right" type='text' placeholder='MESSAGE' className='message'></input>
                     </form>
-                    <h3 className='btn-black'>
-                        <a data-aos="fade-up" href='#'>
+                    <h3 className='btn-black' data-aos="fade-up">
+                        <a href='#'>
                             SUBMIT
                         </a>
                     </h3>

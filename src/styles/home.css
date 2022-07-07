@@ -180,7 +180,6 @@
 }
 .contact-parent .left-side {
     margin-left: 12.5vw;
-    
 }
 .contact-parent .right-side {
     background-color: var(--black);
@@ -262,16 +261,24 @@
     }
     .contact-parent .left-side {
         height: 75vw;
+        margin: 0;
+        margin: auto;
         text-align: center;
         height: fit-content;
     }
+    .contact-parent .contact-content h2 {
+        margin-left: 0;
+    }
     .contact-parent .contact-content p {
+        margin: auto;
         width: 75vw;
     }
     .contact-form {
+        margin: auto;
         width: 75vw;
     }
     .contact-content .btn-black {
+        margin: auto;
         margin-top: 20px;
         width: 75vw;
         padding: 1.5% 0;
@@ -286,5 +293,8 @@
     }
     .contact-parent .right-side h2:first-child {
         margin-top: 5%;
+    }
+    .contact-parent .right-side p {
+        margin-bottom: 5%;
     }
 }

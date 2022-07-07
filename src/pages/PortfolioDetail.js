@@ -21,7 +21,7 @@ function PortfolioDetail() {
 
     const handleScroll = () => setYPos(window.pageYOffset);
 
-    const default_URL = 'http://localhost:3000/project/portfolios'
+    const default_URL = '/project/portfolios'
 
     // Check if portofolio exists
     if(typeof portfolioData.data !== "undefined") {
