@@ -17,10 +17,10 @@ function Navbar() {
     return (
         <>
             <div className='navbar-parent' style={{ opacity: `${1 - yPos*0.008}` }}>
-                <div className='company' style={{ transform: `translateX(-${yPos * 4}px)` }}>
+                <a href='/' className='company' style={{ transform: `translateX(-${yPos * 4}px)` }}>
                     <SiHomeassistant className='logo'></SiHomeassistant>
                     <h2>Company Name</h2>
-                </div>
+                </a>
                 <div className='hamburger' onClick={() => {
                     hamburgerToggle ? setHamburgerToggle(false) : setHamburgerToggle(true) 
                 }}>

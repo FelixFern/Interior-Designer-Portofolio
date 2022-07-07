@@ -10,6 +10,8 @@
 }
 .company {
     display: flex;
+    text-decoration: none;
+    color: var(--black);
     column-gap: 30px;
     align-items: center;
     background: white;
