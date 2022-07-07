@@ -1,5 +1,4 @@
 import React, { useState ,useContext, useEffect } from 'react'
-import axios from 'axios'
 import { useParams } from "react-router-dom";
 import { yPosContext, portfolioContext } from '../context/global-state';
 

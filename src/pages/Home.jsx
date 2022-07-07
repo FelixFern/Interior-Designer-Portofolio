@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios';
 import { FaLinkedin, FaInstagram } from 'react-icons/fa'
 import { yPosContext, hamburgerContext, portfolioContext, carouselContext } from '../context/global-state'
 import AOS from 'aos';
