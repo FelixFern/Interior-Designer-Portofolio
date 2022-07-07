@@ -7,8 +7,6 @@ import '../styles/portfolio.css'
 import Loading from './Loading';
 import CarouselPortofolio from '../components/CarouselPortofolio';
 
-
-
 function Portfolio() {
     const default_URL = './project/portfolios'
     const { yPos, setYPos } = useContext(yPosContext)
