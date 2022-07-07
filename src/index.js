@@ -18,6 +18,7 @@ import NotFound from './pages/NotFound';
 
 import { yPosContext, hamburgerContext, portfolioContext, carouselContext } from './context/global-state';
 import { useEffect, useState } from 'react';
+import ScrolltoTop from './components/ScrolltoTop';
 
 export default function App() {
     const [yPos, setYPos] = useState(0)
@@ -32,7 +33,7 @@ export default function App() {
             console.log(err)
         }).then(() => {})
 
-        axios.get("/carousel").then((res) => {
+        axios.get("api/carousel").then((res) => {
             setCarouselData(res)
         }).catch((err) => {
             console.log(err)
@@ -45,6 +46,7 @@ export default function App() {
         <portfolioContext.Provider value={{ portfolioData, setPortfolioData }}>
         <carouselContext.Provider value={{ carouselData, setCarouselData }}>
             <Navbar className="navbar"></Navbar>
+            <ScrolltoTop></ScrolltoTop>
             <Router>
                 <Routes>
                     <Route path="/" element={<Home/>}></Route>

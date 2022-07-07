@@ -28,19 +28,17 @@ function Carousel() {
     })
 
     const moveLeft = () => {
-        xOffset == 0 ? setXOffset(0) : setXOffset(xOffset + 25)
+        xOffset == 0 ? setXOffset(0) : setXOffset(xOffset + 100 / slides.length)
     }
     const moveRight = () => {
-        xOffset <= -(slides.length - 2) * 25 ? setXOffset(0) : setXOffset(xOffset - 25)
+        xOffset <= -(slides.length - 2) * 100 / slides.length ? setXOffset(0) : setXOffset(xOffset - 100 / slides.length)
     }
-    // Temporary
+
     return (
         <>
-            {/* <div className='carousel-container'> */}
-                <div className='carousel' style={{ transform: `translateX(${xOffset}%)`}}>
-                    {slides}
-                </div>
-            {/* </div> */}
+            <div className='carousel' style={{ transform: `translateX(${xOffset}%)`}}>
+                {slides}
+            </div>
             <div className="thumb">
                 <h1 onClick={() => {moveLeft()}}><AiOutlineLeft/></h1>
                 <h1 onClick={() => {moveRight()}}><AiOutlineRight/></h1>

@@ -85,8 +85,8 @@
     }
     .hamburger .bar-1 {
         transition: 0.5s;
-        transform: rotate(45deg);
-        width: 20px;
+        transform-origin: top right;
+        transform: rotate(-45deg);
     }
     .hamburger .bar-2 {
         transition: 0.5s;
@@ -94,7 +94,8 @@
     }
     .hamburger .bar-3 {
         transition: 0.5s;
-        transform: rotate(-45deg);
+        transform-origin: bottom right;
+        transform: rotate(45deg);
     }   
     .navigation {
         display: none;

@@ -14,6 +14,7 @@ function Home() {
     const { portfolioData, setPortfolioData } = useContext(portfolioContext)
     const { carouselData, setCarouselData } = useContext(carouselContext)
     const [ isLoading, setLoading ] = useState(true)
+
     const handleScroll = () => setYPos(window.pageYOffset);
     
     useEffect(() => {

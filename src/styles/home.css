@@ -171,11 +171,13 @@
 .contact-parent {
     width: 100vw;
     height: fit-content;
+    overflow: hidden;
     display: flex;
 }
 .contact-parent .contact-content {
     width: 75vw;
     padding: 5% 0;
+    overflow: hidden;
     margin: auto;
 }
 .contact-parent .left-side {

@@ -1,20 +1,21 @@
-.carousel {
+.carousel-p {
     transition: 0.5s;
     width: fit-content;
     height: fit-content;
     display: flex;
     position: relative;
 }
-.carousel img {
+.carousel-p img {
     aspect-ratio: 16/9;
-    width: 50vw;
+    width: 100vw;
+    height: 80vh;
     height: auto;
     object-fit: cover;
 }
-.carousel .carousel-slide {
+.carousel-p .carousel-slide {
     transition: 0.8s;
 }
-.carousel .carousel-slide:hover {
+.carousel-p .carousel-slide:hover {
     transition: 0.8s;
     cursor: pointer;
     filter: brightness(70%);

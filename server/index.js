@@ -25,7 +25,7 @@ app.get("/api", (req, res) => {
     res.json(GPD.GPD());
 })
 
-app.get("/carousel", (req,res) => {
+app.get("/api/carousel", (req,res) => {
     res.json(GPD.getCarousel());
 })
 

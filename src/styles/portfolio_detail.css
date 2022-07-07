@@ -89,7 +89,6 @@
     .portfolio-desc h2 {
         font-size: 20px;
         padding: 5px 0px;
-
     }
     .portfolio-desc p{
         font-size: 16px;
@@ -97,8 +96,6 @@
     .right {
         display: block;
         width: fit-content;
-        margin: 0;
-        top: 45%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -106,7 +103,6 @@
         row-gap: 20px;
     }
     .gallery-tile {
-        aspect-ratio: 16/9;
         width: 75vw;
     }
 }
