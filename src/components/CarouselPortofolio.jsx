@@ -39,6 +39,7 @@ function CarouselPortofolio({data, year}) {
     data.map((val, i) => {
         slides.push(
             <GalleryTile
+                key={i}
                 title={val.Name}
                 subtitle=""
                 year={year}

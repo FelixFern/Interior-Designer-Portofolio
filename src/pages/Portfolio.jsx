@@ -67,6 +67,7 @@ function Portfolio() {
                                 <h2>{year}</h2>
                             </div>
                             <CarouselPortofolio
+                                key = {i}
                                 data = {portfolioData.data.result[i].Projects}
                                 year = {year}
                             ></CarouselPortofolio>

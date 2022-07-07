@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import axios from 'axios';
 import { FaLinkedin, FaInstagram } from 'react-icons/fa'
 import { yPosContext, hamburgerContext, portfolioContext, carouselContext } from '../context/global-state'
 import AOS from 'aos';
@@ -8,30 +9,50 @@ import '../styles/home.css'
 
 import Carousel from '../components/Carousel';
 import Loading from './Loading';
+import { type } from '@testing-library/user-event/dist/type';
 
 function Home() {
     const { yPos, setYPos } = useContext(yPosContext)
     const { portfolioData, setPortfolioData } = useContext(portfolioContext)
     const { carouselData, setCarouselData } = useContext(carouselContext)
+    const [ identity, setIdentity ] = useState({})
     const [ isLoading, setLoading ] = useState(true)
 
     const handleScroll = () => setYPos(window.pageYOffset);
     
+    fetch("identity.json").then(
+        function(res){
+            return res.json()
+    }).then(
+        function(data){
+            setIdentity(data)
+    }).catch(
+        function(err){
+            console.log(err, ' error')
+        }
+    )
+
     useEffect(() => {
         document.title = "Home - Interior Design Portofolio"
         AOS.init();
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    useEffect(() => {
         if(typeof portfolioData !== 'undefined') {
             setLoading(false)
         } else {
             setLoading(true)
         }
-    }, [portfolioData])
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
+    
+
+    useEffect(() => {
+        if(typeof identity.identity != 'undefined') {
+            setLoading(false)
+        } else {
+            setLoading(true)
+        }
+    }, [identity])
     if(isLoading) return <Loading></Loading>
 
     return (
@@ -55,8 +76,8 @@ function Home() {
                     </div>
                 </div>
                 <div className='social-media' style={{ opacity: `${1 - yPos*0.0015}` }}>
-                    <FaInstagram className='icon'><a href='#'></a></FaInstagram>
-                    <FaLinkedin className='icon'><a href='#'></a></FaLinkedin>
+                    <a href={identity.identity[0].link}><FaInstagram className='icon'></FaInstagram></a>
+                    <a href={identity.identity[1].link}><FaLinkedin className='icon'></FaLinkedin></a>
                 </div>
             </div>
             <div className='works'>
@@ -69,7 +90,7 @@ function Home() {
                 <div className='see-more'>
                     <h3 data-aos="fade-right">Want to see more ?</h3>
                     <h3 data-aos="fade-left" className='btn-black'>
-                        <a href='/portfolio' >
+                        <a href='/portofolio' >
                             Other Works
                         </a>
                     </h3>
