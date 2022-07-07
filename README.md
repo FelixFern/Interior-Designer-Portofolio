@@ -1,70 +1,66 @@
-# Interior Design Portofolio
+# Interior Design Portfolio Web using ReactJS and ExpressJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Web app portofolio berbasis NodeJS dengan framework ReactJS dan ExpressJS.
 
-## Available Scripts
+![HomePage](./assets/Landing.png)
 
-In the project directory, you can run:
+## Table of Contents
+* [General Info](#general-information)
+* [Setup](#setup)
+* [Getting Started](#getting-started)
+* [Usage](#usage)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Contact](#contact)
 
-### `npm start`
+## General Information
+Aplikasi bekerja dengan melakukan iterasi pada setiap folder di dalam direktori project untuk mencari semua projek yang ada dan deskripsinya.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup / Pre-requisite
+- NodeJS
 
-### `npm test`
+## Getting Started
+Cara untuk melakukan configurasi terhadap portofolio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> Cara modifikasi Portofolio
+- Buka Folder public/project/portfolios/
+- Atur tahun-tahun portofolio dengan membuat folder tahun
+- Atur project-project portofolio dengan membuat folder project di dalam folder tahun
+- Masukan gambar-gambar pada folder setiap project portofolio
 
-### `npm run build`
+> Cara modifikasi overview pada _Home Page_
+- Buka Folder public/project/portfolios/
+- Masukan Image yang akan ditampilkan pada halaman utama pada folder images
+- Masukan link dengan nama yang sama dengan gambar pada folder links
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Cara modifikasi identitas terdapat pada _config.json_
+- Buka file dan ganti isi bagian-bagian yang ingin diganti
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
+- Install seluruh dependencies dengan menjalankan script
+```
+    npm install
+```
+- Jalankan front-end dengan menjalankan script
+```
+    npm start
+``` 
+- Jalankan back-end dengan masuk ke dalam folder _server_ dan menjalankan script
+```
+    node index.js
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Status
+Project is: _In Progress_ 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Room for Improvement
+Melakukan implementasi terhadap keamanan seperti try-catch untuk meminimalisasi kemungkinan user mendapatkan blank-page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+- Felix Fernando
+- Aldwin Hardi Swastia
