@@ -28,14 +28,23 @@
     column-gap: 50px;
     align-items: center;
 }
-.navigation .link a {
+.navigation .link {
     color: white;
+    height: fit-content;
+    padding: 0.8rem 1rem;
+    text-align: center;
     text-decoration: none;
 }
 .navigation .link:hover {
     opacity: 0.8;
-    border: solid 0.16rem white;
-    padding: 0.5rem;
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+}
+.navigation .link a { 
+    text-align: center;
+    margin: auto;
+    color: white;
+    text-decoration: none;
 }
 .navigation .btn-white {
     margin-left: -1.5%;

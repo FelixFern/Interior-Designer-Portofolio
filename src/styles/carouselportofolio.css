@@ -7,7 +7,7 @@
 }
 .carousel-p img {
     aspect-ratio: 16/9;
-    width: 100vw;
+    width: 50vw;
     height: 80vh;
     height: auto;
     object-fit: cover;
@@ -32,8 +32,7 @@
 }
 .gallery-tile-parent {
     aspect-ratio: 16/9;
-    width: 100vw;
-    height: 80vh;
+    width: 50vw;
     overflow: hidden;
     object-fit: cover;
     display: flex;

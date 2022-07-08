@@ -140,7 +140,7 @@
 }
 /* Contact Section */
 .vision-parent {
-    background-color: var(--black);
+    background-color: white;
     width: 100vw;
 }
 .vision-content {
@@ -148,10 +148,17 @@
     height: fit-content;
     margin: auto;
 }
+.vision-content .vision-img{
+    position: absolute;
+    right: 0%;
+    transform: translateY(-50%);
+    width: 50vw;
+    aspect-ratio: 16/9;
+    height: auto;
+}
 .vision-content .vision {
-    padding: 10% 0;
-    color: white;
-    width: 40%;
+    padding: 5% 0;
+    width: 45%;
 }
 .vision-content .vision h2 {
     font-size: 24px;
@@ -161,35 +168,27 @@
     font-size: 24px;
     line-height: 32px;
 }
-.vision-parent .vision-img {
-    position: absolute;
-    width: 50vw;
-    right: 0;
-    z-index: 2;
-    transform: translateY(-50%);
-}
 .contact-parent {
     width: 100vw;
+    position: relative;
     height: fit-content;
     overflow: hidden;
     display: flex;
+    background-color: var(--black);
+    color: white;
 }
 .contact-parent .contact-content {
     width: 75vw;
     padding: 5% 0;
-    overflow: hidden;
+    overflow: visible;
     margin: auto;
-}
-.contact-parent .left-side {
     margin-left: 12.5vw;
 }
 .contact-parent .right-side {
-    background-color: var(--black);
     color: white;
+    margin-left: -12.5vw;
+    vertical-align: middle;
     height: 30vw;
-}
-.contact-parent .right-side h2:first-child {
-    margin-top: 35%;
 }
 .contact-parent .right-side p, .right-side h2  {
     margin-left: 10%;
@@ -197,6 +196,9 @@
 .contact-parent .contact-content h2 {
     font-size: 24px;
     margin-bottom: 30px;
+}
+.contact-parent .right-side h2:first-child {
+    margin-top: 5%;
 }
 .contact-parent .right-side h2 {
     margin-bottom: 10px;
@@ -225,7 +227,7 @@
 .contact-form .message {
     height: 86px;
 }
-.contact-content .btn-black {
+.contact-content .btn-white {
     margin-top: 20px;
     width: 25vw;
 }
@@ -249,9 +251,13 @@
     }
     .vision-content .vision {
         text-align: center;
+        margin: auto;
         width: 100%;
     }
-    .vision-parent .vision-img{
+    .vision-content .vision p {
+        font-size: 16px;
+    }
+    .vision-content .vision-img{
         display: none;
     }
     .contact-parent {
@@ -263,7 +269,6 @@
     }
     .contact-parent .left-side {
         height: 75vw;
-        margin: 0;
         margin: auto;
         text-align: center;
         height: fit-content;
@@ -277,18 +282,20 @@
     }
     .contact-form {
         margin: auto;
+        margin-top: 30px;
         width: 75vw;
     }
-    .contact-content .btn-black {
+    .contact-content .btn-white {
         margin: auto;
         margin-top: 20px;
         width: 75vw;
         padding: 1.5% 0;
     }
     .contact-parent .right-side {
-        height: 100vw;
-        text-align: center;
+        margin: auto;
         height: fit-content;
+        text-align: center;
+        padding-bottom: 10%;
     }
     .contact-parent .right-side > *{
         margin-left: 0;
