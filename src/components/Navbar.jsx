@@ -35,13 +35,13 @@ function Navbar() {
                         </a>    
                     </h3>
                     <h3 className='link'>
-                        <a href='/#contact'>
-                            Contact
-                        </a>    
-                    </h3>
-                    <h3 className='btn-white'>
                         <a href='/portofolio'>
                             Portfolio
+                        </a>    
+                    </h3>
+                    <h3 className='link'>
+                        <a href='/#contact'>
+                            Contact
                         </a>    
                     </h3>
                 </div>

@@ -34,6 +34,8 @@
 }
 .navigation .link:hover {
     opacity: 0.8;
+    border: solid 0.16rem white;
+    padding: 0.5rem;
 }
 .navigation .btn-white {
     margin-left: -1.5%;

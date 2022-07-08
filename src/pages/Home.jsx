@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { yPosContext, hamburgerContext, portfolioContext, carouselContext } from '../context/global-state'
 import AOS from 'aos';
 
@@ -76,7 +76,7 @@ function Home() {
                 </div>
                 <div className='social-media' style={{ opacity: `${1 - yPos*0.0015}` }}>
                     <a href={identity.identity[0].link}><FaInstagram className='icon'></FaInstagram></a>
-                    <a href={identity.identity[1].link}><FaLinkedin className='icon'></FaLinkedin></a>
+                    <a href={identity.identity[1].link}><FaWhatsapp className='icon'></FaWhatsapp></a>
                 </div>
             </div>
             <div className='works'>
