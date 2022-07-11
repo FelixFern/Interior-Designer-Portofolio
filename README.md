@@ -23,6 +23,11 @@ Aplikasi bekerja dengan melakukan iterasi pada setiap folder di dalam direktori 
 ## Getting Started
 Cara untuk melakukan configurasi terhadap portofolio
 
+> Batasan
+- Nama folder project harus sama dengan nama project
+- Nama folder tidak boleh mengandung spasi
+- Nama folder tidak boleh mengandung karakter khusus seperti @, #, $, %, dan sebagainya
+
 > Cara modifikasi Portofolio
 - Buka Folder public/project/portfolios/
 - Atur tahun-tahun portofolio dengan membuat folder tahun
