@@ -94,6 +94,9 @@
     .tile-detail p {
         font-size: 12px;
     }
+    .gallery-tile-parent { 
+        width: 100vw;
+    }
     .gallery-tile-parent .tile-detail .btn {
         margin-top: 10px;
         font-size: 12px;

@@ -63,7 +63,8 @@
 
 @media only screen and (max-width : 1000px) {
     .portfolio-detail-parent {
-        display: block;
+        display: flex;
+        flex-direction: column-reverse;
     }
     .portfolio-desc-parent {
         position: absolute;

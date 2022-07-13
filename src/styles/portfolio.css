@@ -54,13 +54,13 @@
     width: fit-content;
     height: fit-content;
 }
-.portfolio-gallery {
+/* .portfolio-gallery {
     width: 100vw;
     height: fit-content;
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+} */
 
 /* Tablet */
 @media only screen and (max-width : 1024px) {
