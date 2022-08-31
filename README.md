@@ -59,7 +59,7 @@ Cara untuk melakukan configurasi terhadap portofolio
 
 
 ## Project Status
-Project is: _In Progress_ 
+Project is: _Finished_ 
 
 
 ## Room for Improvement
